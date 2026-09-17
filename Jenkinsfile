@@ -9,8 +9,11 @@ pipeline {
         }
 
         stage('Test') {
+            when {
+                branchName 'main'
+            }
             steps {
-                echo 'Running tests'
+                sh 'echo Running tests'
             }
         }
     }
